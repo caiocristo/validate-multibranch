@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     if (env.CHANGE_ID) {
-                        echo pullRequest
+                        echo pullRequest.toString()
                     }
                 }
             }
