@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    triggers {
+        issueCommentTrigger('.*sobe esse ambiente.*')
+    }
+
 
     stages {
         stage('init') {
@@ -12,7 +16,7 @@ pipeline {
             steps {
                 script {
                     if (env.CHANGE_ID) {
-                        echo pullRequest.toString()
+                        echo pullRequest
                     }
                 }
             }
